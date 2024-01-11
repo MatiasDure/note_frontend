@@ -1,19 +1,19 @@
 import loginAxios from "../utils/login";
-import {useState} from "react";
+import { useState } from "react";
 import { PropTypes } from "prop-types";
 
-const LoginForm = ({setUser, setErrorMsg}) => {
+const LoginForm = ({ setUser, setErrorMsg }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-	
+
 	const handleLogin = async (e) => {
 		e.preventDefault();
-	
+
 		try{
 			const loginUser = {
 				username,
 				password
-			}
+			};
 			const response = await loginAxios.login(loginUser);
 			setUser(response);
 			console.log(JSON.stringify(response));
@@ -42,15 +42,11 @@ const LoginForm = ({setUser, setErrorMsg}) => {
 			<button type="submit">Login</button>
 		</form>
 	);
-}
+};
 
 LoginForm.propTypes = {
-	username: PropTypes.string.isRequired,
-	password: PropTypes.string.isRequired,
-	setUsername: PropTypes.func.isRequired,
-	setPassword: PropTypes.func.isRequired,
 	setUser: PropTypes.func.isRequired,
 	setErrorMsg: PropTypes.func.isRequired,
-}
+};
 
 export default LoginForm;

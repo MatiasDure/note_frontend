@@ -1,6 +1,6 @@
 import { useState, forwardRef, useImperativeHandle } from "react";
 
-const Toggleable = forwardRef(({children, buttonLabel}, refs) => {
+const Toggleable = forwardRef(({ children, buttonLabel }, refs) => {
 	const [visible, setVisible] = useState(false);
 
 	const toggleVisibility = () => setVisible(!visible);
@@ -8,7 +8,7 @@ const Toggleable = forwardRef(({children, buttonLabel}, refs) => {
 	useImperativeHandle(refs, () => {
 		return {
 			toggleVisibility
-		}
+		};
 	});
 
 	return (
