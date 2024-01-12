@@ -14,7 +14,7 @@ const Toggleable = forwardRef(({ children, buttonLabel }, refs) => {
 	return (
 		<>
 			{ visible ?
-				<div>
+				<div className="toggleableContent">
 					{children}
 					<button onClick={toggleVisibility}>cancel</button>
 				</div>
@@ -26,5 +26,7 @@ const Toggleable = forwardRef(({ children, buttonLabel }, refs) => {
 		</>
 	);
 });
+
+Toggleable.displayName = "Toggleable";
 
 export default Toggleable;
