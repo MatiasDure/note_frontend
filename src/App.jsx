@@ -6,7 +6,7 @@ import "./components/LoginForm";
 import LoginForm from "./components/LoginForm";
 import Toggleable from "./components/Toggleable";
 import NoteForm from "./components/NoteForm";
-import Note from "./components/Note";
+import Notes from "./components/Notes";
 
 function App() {
 	const [notes, setNotes] = useState([]);
@@ -93,7 +93,12 @@ function App() {
 						<button onClick={handleLogOut}>Logout</button>
 					</div>
 			}
-			<ul className="card">
+			<Notes
+				toggleNoteImportance={toggleNoteImportance}
+				deleteNote={deleteNote}
+				notes={notes}
+			/>
+			{/* <ul className="card">
 				{notes.map((note) => {
 					return (
 						<Note
@@ -104,7 +109,7 @@ function App() {
 						/>
 					);
 				})}
-			</ul>
+			</ul> */}
 		</>
 	);
 }

@@ -1,5 +1,6 @@
-const Notes = () => {
+import Note from "./Note";
 
+const Notes = ({notes, toggleNoteImportance, deleteNote}) => {
 	return (
 		<ul className="card">
 			{notes.map((note) => {
@@ -15,3 +16,5 @@ const Notes = () => {
 		</ul>
 	);
 };
+
+export default Notes;
