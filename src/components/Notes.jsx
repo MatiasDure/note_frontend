@@ -1,6 +1,6 @@
 import Note from "./Note";
 
-const Notes = ({notes, toggleNoteImportance, deleteNote}) => {
+const Notes = ({ notes, toggleNoteImportance, deleteNote }) => {
 	return (
 		<ul className="card">
 			{notes.map((note) => {
